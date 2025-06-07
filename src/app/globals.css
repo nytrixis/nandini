@@ -1,26 +1,158 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Share+Tech+Mono&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom theme variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --glass-bg: rgba(15, 23, 42, 0.3);
+  --glass-border: rgba(148, 163, 184, 0.1);
+  --terminal-bg: rgba(0, 0, 0, 0.8);
+  --accent-violet: #8b5cf6;
+  --accent-amber: #f59e0b;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
 
+* {
+  text-transform: lowercase !important;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Share Tech Mono', monospace;
+  overflow: hidden;
+  height: 100vh;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
 }
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.orbitron {
+  font-family: 'Orbitron', monospace;
+}
+
+.terminal-glow {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.dock-glow {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.7);
+}
+
+/* Custom Cursor Styles */
+* {
+  cursor: none !important;
+}
+
+/* Ensure clickable elements remain interactive */
+button, a, [role="button"], input, textarea, select, [onclick], .cursor-pointer {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 1;
+}
+
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(0, 0) rotate(30deg);
+}
+
+.cursor-line {
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  background: #a855f7;
+  border-radius: 2px;
+  box-shadow: 
+    0 0 8px #a855f7,
+    0 0 16px #a855f7,
+    0 0 24px #a855f7;
+  transform-origin: left center;
+}
+
+/* Left line of triangle - angled down-right */
+.cursor-line:first-child {
+  transform: rotate(45deg);
+  top: 0;
+  left: 0;
+}
+
+/* Right line of triangle - angled down-left */
+.cursor-line:last-child {
+  transform: rotate(-45deg);
+  top: 0;
+  left: 0;
+}
+
+.cursor-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #a855f7;
+  border-radius: 50%;
+  top: -4px;
+  left: -6px;
+  opacity: 0;
+  transform: scale(0);
+  box-shadow: 
+    0 0 12px #a855f7,
+    0 0 24px #a855f7,
+    0 0 36px #a855f7;
+}
+
+/* Hover state - show dot at tip */
+.cursor-hover .cursor-dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cursor-click .cursor-dot {
+  opacity: 1;
+  transform: scale(1.5);
+  background: #c084fc;
+  box-shadow: 
+    0 0 16px #c084fc,
+    0 0 32px #c084fc,
+    0 0 48px #c084fc;
+}
+
