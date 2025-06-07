@@ -156,3 +156,119 @@ button, a, [role="button"], input, textarea, select, [onclick], .cursor-pointer 
     0 0 48px #c084fc;
 }
 
+/* Add this to your existing globals.css file */
+
+.search-glow {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+/* GitHub modal specific styles */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;  
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Prose styles for README */
+.prose-invert {
+  color: #e2e8f0;
+}
+
+.prose-violet a {
+  color: #a855f7;
+}
+
+.prose-violet a:hover {
+  color: #c084fc;
+}
+
+/* Add to your existing globals.css */
+
+.readme-content {
+  color: rgb(203 213 225);
+  line-height: 1.6;
+}
+
+.readme-content h1,
+.readme-content h2,
+.readme-content h3,
+.readme-content h4,
+.readme-content h5,
+.readme-content h6 {
+  color: rgb(226 232 240);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.readme-content h1:first-child,
+.readme-content h2:first-child,
+.readme-content h3:first-child {
+  margin-top: 0;
+}
+
+.readme-content strong {
+  color: rgb(196 181 253);
+  font-weight: 600;
+}
+
+.readme-content em {
+  color: rgb(148 163 184);
+  font-style: italic;
+}
+
+.readme-content hr {
+  border-color: rgba(51 65 85 / 0.5);
+  margin: 1.5rem 0;
+}
+
+.readme-content p {
+  margin-bottom: 1rem;
+}
+
+.readme-content ul,
+.readme-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.readme-content li {
+  margin-bottom: 0.25rem;
+}
+
+/* GitHub-style badges and shields */
+.readme-content img[src*="shields.io"],
+.readme-content img[src*="badge"] {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Code blocks */
+.readme-content pre {
+  background: rgba(15 23 42 / 0.8);
+  border: 1px solid rgba(51 65 85 / 0.5);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.readme-content code {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.readme-content pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}

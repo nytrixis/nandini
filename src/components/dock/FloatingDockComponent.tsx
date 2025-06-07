@@ -16,13 +16,13 @@ const permanentDockItems = [
   {
     title: 'github',
     icon: <IconBrandGithub className="h-full w-full text-slate-300" />,
-    href: 'https://github.com/nytrixis',
+    action: 'modal',
     isPermanent: true
   },
   {
     title: 'resume',
     icon: <IconFileText className="h-full w-full text-slate-300" />,
-    onClick: () => {},
+    action: 'modal',
     isPermanent: true
   },
   {
@@ -50,13 +50,14 @@ export default function FloatingDockComponent() {
 
   // Add onClick handlers for permanent modal items
   const permanentItemsWithHandlers = permanentDockItems.map(item => ({
-    ...item,
-    onClick: item.onClick ? () => {
-      if (item.title === 'resume') openModal('resume')
-      else if (item.title === 'contact') openModal('email')
-      else if (item.title === 'skillmap galaxy') openModal('skillmap')
-    } : undefined
-  }))
+  ...item,
+  onClick: item.action === 'modal' ? () => {
+    if (item.title === 'github') openModal('github')
+    else if (item.title === 'resume') openModal('resume')
+    else if (item.title === 'contact') openModal('email')
+    else if (item.title === 'skillmap galaxy') openModal('skillmap')
+  } : item.onClick
+}))
 
   // Create minimized tab items
   const minimizedTabItems = minimizedTabs.map(tab => ({

@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 import Desktop from '@/components/desktop/Desktop'
 import FloatingDockComponent from '@/components/dock/FloatingDockComponent'
 import Terminal from '@/components/terminal/Terminal'
 import OverviewPanel from '@/components/terminal/OverviewPanel'
 import WalletDropdown from '@/components/wallet/WalletDropdown'
 import StatusBar from '@/components/ui/StatusBar'
+import SearchBar from '@/components/ui/SearchBar'
 import Toast from '@/components/ui/Toast'
 import ModalManager from '@/components/modals/ModalManager'
 import { useModalStore } from '@/store/useModalStore'
@@ -15,10 +17,25 @@ import { useModalStore } from '@/store/useModalStore'
 export default function Home() {
   const [mounted, setMounted] = useState(false)
   const { toast } = useModalStore()
+  const router = useRouter()
 
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  const handleNavigate = async (url: string) => {
+    try {
+      console.log('handleNavigate called with:', url) // Debug log
+      // Navigate to the browse page with the URL parameter
+      const encodedUrl = encodeURIComponent(url)
+      const browseUrl = `/browse?url=${encodedUrl}`
+      console.log('Navigating to:', browseUrl) // Debug log
+      
+      router.push(browseUrl)
+    } catch (error) {
+      console.error('Navigation error:', error)
+    }
+  }
 
   if (!mounted) {
     return (
@@ -67,11 +84,14 @@ export default function Home() {
       <div className="absolute left-6 top-1/2 -translate-y-1/2 z-40">
         <FloatingDockComponent />
       </div>
-      <StatusBar />
 
+      <StatusBar />
       <Terminal />
       <OverviewPanel />
       <ModalManager />
+
+      {/* Search Bar - positioned at bottom center with 10px gap */}
+      <SearchBar onNavigate={handleNavigate} />
 
       <AnimatePresence>
         {toast && (
