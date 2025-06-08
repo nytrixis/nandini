@@ -31,25 +31,23 @@ const vaultEntries: VaultEntry[] = [
     category: 'publication',
     type: 'pdf',
     description: 'IEEE and Scopus indexed research paper on AI-powered disaster response systems accepted at ISAAC 2025.',
-    date: '2024-12',
+    date: '2025-04',
     issuer: 'IEEE Conference',
-    verificationHash: '0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385',
+    verificationHash: 'https://drive.google.com/file/d/10hyozKmkqLMQq2hGRtcPRF21cuhnSyIR/view?usp=sharing',
     tags: ['AI', 'Disaster Management', 'Research', 'IEEE', 'Scopus'],
     verified: true,
     details: 'Comprehensive research on leveraging artificial intelligence for intelligent disaster management systems. The paper presents novel approaches to predictive modeling, resource allocation, and emergency response coordination.',
-    skills: ['Research Methodology', 'AI/ML', 'Data Analysis', 'Academic Writing'],
-    blockchainProof: 'Verified on Ethereum mainnet'
+    skills: ['Research Methodology', 'Blockchain', 'AI/ML', 'Data Analysis', 'Academic Writing']
   },
   {
     id: '2',
     name: 'TechGig Code Gladiators Finalist Certificate',
     category: 'achievement',
-    type: 'nft',
+    type: 'document',
     description: 'Finalist recognition in India\'s biggest coding competition with 300K+ participants.',
-    date: '2024-08',
+    date: '2024-06',
     issuer: 'TechGig',
-    verificationHash: '0x2c2eb7b11a91385fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7',
-    ipfsHash: 'QmX7Hn8k2aL9p3B4c5D6e7F8g9H0i1J2k3L4m5N6o7P8q9R0s',
+    verificationHash: 'https://drive.google.com/your-techgig-proof-link',
     tags: ['Competitive Programming', 'Algorithm', 'Problem Solving'],
     verified: true,
     details: 'Achieved finalist status among 300,000+ participants in India\'s premier coding competition. Demonstrated exceptional problem-solving skills and algorithmic thinking.',
@@ -61,90 +59,58 @@ const vaultEntries: VaultEntry[] = [
     category: 'achievement',
     type: 'document',
     description: 'Semi-finalist in Myntra\'s flagship hackathon focused on women empowerment through technology.',
-    date: '2024-07',
+    date: '2024-08',
     issuer: 'Myntra',
-    verificationHash: '0x91385fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a',
-    tags: ['Hackathon', 'Women Empowerment', 'E-commerce', 'Innovation'],
+    verificationHash: 'https://drive.google.com/file/d/1qF4BYrBrWX87MuPyLhIFYoNHukfPTQYE/view?usp=sharing',
+    tags: ['Hackathon', 'Women Empowerment', 'E-commerce', 'AI/ML', 'Innovation'],
     verified: true,
     details: 'Developed innovative solutions for women empowerment in the e-commerce space. Focused on creating inclusive technology platforms.',
-    skills: ['Full-Stack Development', 'UI/UX Design', 'Social Impact', 'Innovation']
+    skills: ['Full-Stack Development', 'UI/UX Design', 'Social Impact', 'AI/ML', 'Innovation']
   },
   {
     id: '4',
-    name: 'RNMC Top 20 Delegate',
-    category: 'achievement',
-    type: 'document',
-    description: 'Recognized among top 20 delegates in Rajasthan National Model Congress for exceptional debate and policy skills.',
-    date: '2024-06',
-    issuer: 'RNMC',
-    verificationHash: '0xead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385fade1c0d57a7af66ab4',
-    tags: ['Public Speaking', 'Policy', 'Leadership', 'Debate'],
-    verified: true,
-    details: 'Demonstrated exceptional skills in policy formulation, public speaking, and parliamentary procedures. Engaged in high-level debates on national issues.',
-    skills: ['Public Speaking', 'Policy Analysis', 'Critical Thinking', 'Leadership']
-  },
-  {
-    id: '5',
     name: 'MUN Outstanding Delegate (3x)',
     category: 'achievement',
     type: 'document',
     description: 'Three-time Outstanding Delegate award winner in various Model United Nations conferences.',
     date: '2023-2024',
     issuer: 'Various MUN Conferences',
-    verificationHash: '0xc2c2eb7b11a91385fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7',
+    verificationHash: 'https://drive.google.com/file/d/1-slKjvYo-5raKvHpRhpJ7WJo8MsCZwh4/view?usp=sharing',
     tags: ['Diplomacy', 'International Relations', 'Public Speaking', 'Negotiation'],
     verified: true,
     details: 'Consistently recognized for exceptional diplomatic skills, policy knowledge, and debate performance across multiple international conferences.',
     skills: ['Diplomacy', 'International Relations', 'Negotiation', 'Research']
   },
   {
-    id: '6',
+    id: '5',
     name: 'GirlScript Summer of Code Mentor Certificate',
     category: 'credential',
-    type: 'nft',
+    type: 'document',
     description: 'Official mentor recognition for guiding 20+ contributors across multiple tech stacks in open source development.',
-    date: '2024-05',
+    date: '2024-09',
     issuer: 'GirlScript Foundation',
-    verificationHash: '0x66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385fade1c0d57a7af',
-    ipfsHash: 'QmY8Io9l3aM0q4C5d6E7f8G9h0I1j2K3l4M5n6O7p8Q9r0S1t',
+    verificationHash: 'https://drive.google.com/file/d/1VzpVWL9p9ECG1lwqUpA6PQD_t9mQc7qC/view?usp=sharing',
     tags: ['Mentorship', 'Open Source', 'Community', 'Leadership'],
     verified: true,
     details: 'Mentored 20+ contributors in open source development, providing guidance on various technologies and best practices.',
     skills: ['Mentorship', 'Open Source', 'Community Building', 'Technical Leadership']
   },
   {
-    id: '7',
-    name: 'Blockchain Development Certification',
-    category: 'certificate',
-    type: 'nft',
-    description: 'Advanced certification in blockchain development covering smart contracts, DeFi, and Web3 technologies.',
-    date: '2024-03',
-    issuer: 'ConsenSys Academy',
-    verificationHash: '0x7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385fade1c0d57a',
-    ipfsHash: 'QmZ9Jp0m4bN1r5D6e7F8g9H0i1J2k3L4m5N6o7P8q9R0s1T2u',
-    tags: ['Blockchain', 'Smart Contracts', 'DeFi', 'Web3'],
-    verified: true,
-    validUntil: '2027-03',
-    details: 'Comprehensive certification covering Ethereum development, smart contract security, DeFi protocols, and Web3 integration.',
-    skills: ['Solidity', 'Smart Contracts', 'DeFi', 'Web3', 'Ethereum'],
-    blockchainProof: 'Certificate minted as NFT on Polygon'
-  },
-  {
-    id: '8',
-    name: 'AWS Cloud Practitioner',
-    category: 'certificate',
+    id: '6',
+    name: 'Hack4Bengal Core Team (Web)',
+    category: 'credential',
     type: 'document',
-    description: 'Amazon Web Services Cloud Practitioner certification demonstrating cloud computing fundamentals.',
-    date: '2024-01',
-    issuer: 'Amazon Web Services',
-    verificationHash: '0x91385fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a',
-    tags: ['Cloud Computing', 'AWS', 'Infrastructure', 'DevOps'],
+    description: 'Served as a core team member for Hack4Bengal 4.0, Eastern India’s largest hackathon, contributing to website development and tech support.',
+    date: '2025-03',
+    issuer: 'Hack4Bengal Team',
+    verificationHash: 'https://hack4bengal.tech/team',
+    tags: ['Hackathon Organization', 'Web Development', 'Leadership', 'Event Tech'],
     verified: true,
-    validUntil: '2027-01',
-    details: 'Foundational certification covering AWS cloud services, pricing models, security, and architectural best practices.',
-    skills: ['Cloud Computing', 'AWS Services', 'Cloud Security', 'Cost Optimization']
+    details: 'Led web development efforts for Hack4Bengal 4.0, coordinating platform architecture, deployment, and community tech engagement.',
+    skills: ['Team Collaboration', 'Next.js', 'UI/UX', 'Deployment', 'Event Tech']
   }
 ]
+
 
 export default function VaultModal() {
   const { closeModal, minimizeTab } = useModalStore()
@@ -224,7 +190,7 @@ export default function VaultModal() {
 
   const handleVerify = (entry: VaultEntry) => {
     if (entry.verificationHash) {
-      window.open(`https://etherscan.io/tx/${entry.verificationHash}`, '_blank')
+      window.open(`${entry.verificationHash}`, '_blank')
     }
   }
 

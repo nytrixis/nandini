@@ -36,7 +36,7 @@ const projectLogs: ProjectEntry[] = [
     description: 'Decentralized startup investment platform with AI-powered due diligence',
     github: 'https://github.com/nytrixis/nyvex',
     live: 'https://nyvex-warp.vercel.app',
-    date: '2025-01',
+    date: '2025-04',
     overview: 'Nyvex revolutionizes startup funding through blockchain technology, featuring smart investment pools, proof-of-investment NFTs, and cross-chain compatibility.',
     features: [
       'Smart investment pools with automated distribution',
@@ -50,11 +50,11 @@ const projectLogs: ProjectEntry[] = [
       'Cross-chain bridge security considerations',
       'Gas optimization for complex smart contracts'
     ],
-    screenshots: ['/images/nyvex-dashboard.png', '/images/nyvex-pools.png'],
+    screenshots: ['/images/nyvex-dashboard.png', '/images/nyvex-pools.jpg'],
     metrics: {
-      users: '500+ early adopters',
+      users: '5+ early adopters',
       performance: '99.9% uptime',
-      uptime: 'Live since Jan 2025'
+      uptime: 'Live since Mar 2025'
     }
   },
   {
@@ -65,7 +65,7 @@ const projectLogs: ProjectEntry[] = [
     tech: ['React', 'zk-SNARKs', 'IPFS', 'Node.js'],
     description: 'Zero-knowledge credential verification system with dynamic NFTs',
     github: 'https://github.com/nytrixis/credvault',
-    date: '2024-12',
+    date: '2025-02',
     overview: 'CredVault enables secure, privacy-preserving credential verification using zero-knowledge proofs.',
     features: [
       'Zero-knowledge credential verification',
@@ -77,7 +77,8 @@ const projectLogs: ProjectEntry[] = [
       'zk-SNARK circuit optimization',
       'Dynamic NFT metadata updates',
       'Institution onboarding process'
-    ]
+    ],
+    screenshots: ['/images/credvault1.jpg', '/images/credvault2.jpg'],
   },
   {
     id: '3',
@@ -87,7 +88,7 @@ const projectLogs: ProjectEntry[] = [
     tech: ['Avalanche', 'IPFS', 'React', 'Express'],
     description: 'Decentralized healthcare infrastructure for transparent patient data management',
     github: 'https://github.com/nytrixis/dhanvantari',
-    date: '2024-11',
+    date: '2024-06',
     overview: 'A comprehensive healthcare management system built on blockchain for data security and transparency.',
     features: [
       'Secure patient data storage',
@@ -97,28 +98,56 @@ const projectLogs: ProjectEntry[] = [
     ]
   },
   {
-    id: '4',
+  id: '4',
+  name: 'Content Calendar',
+  category: 'Productivity',
+  status: 'live',
+  tech: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Firebase Auth', 'Cloudinary'],
+  description: 'A full-featured content calendar with login, reminders, and media storage for social media teams.',
+  github: 'https://github.com/nytrixis/content-calendar',
+  live: 'https://content-calendar-two.vercel.app', 
+  date: '2025-05',
+  overview: 'Content Calendar is a social media content calendar tool designed to help teams schedule, organize, and get reminded of posts across platforms. It supports multimedia uploads, captions, and hashtag tracking.',
+  features: [
+    'User authentication with signup/login',
+    'Content scheduling with reminders',
+    'Supports image uploads and captions',
+    'Hashtag tracking and categorization',
+    'Calendar view for weekly/monthly planning',
+    'Real-time updates and collaborative editing'
+  ],
+  challenges: [
+    'Building an intuitive and responsive calendar UI',
+    'Managing time-based reminders and notifications',
+    'Optimizing image uploads and compression',
+    'Syncing content state across devices/users'
+  ],
+  screenshots: ['/images/cc1.png', '/images/cc2.png'] 
+},
+  {
+    id: '5',
     name: 'WildX Expedition',
     category: 'Conservation',
     status: 'archived',
     tech: ['Python', 'TensorFlow', 'React', 'MongoDB'],
     description: 'Wildlife conservation dashboard with AI gamification',
     github: 'https://github.com/nytrixis/wildx',
-    date: '2024-09',
+    date: '2024-08',
     overview: 'Gamified platform for wildlife conservation awareness and action tracking.',
     features: [
       'AI-powered species identification',
       'Conservation action tracking',
       'Gamified user engagement',
       'Real-time conservation metrics'
-    ]
+    ],
+    screenshots: ['/images/wildx1.jpg', '/images/wildx2.jpg', '/images/wildx3.jpg'],
   },
   {
-    id: '5',
+    id: '6',
     name: 'Ruche',
     category: 'E-commerce',
     status: 'live',
-    tech: ['Next.js', 'Prisma', 'PostgreSQL', 'Stripe'],
+    tech: ['HTML', 'CSS', 'JavaScript'],
     description: 'Fashion-forward product browser with AI recommendations',
     github: 'https://github.com/nytrixis/ruche',
     date: '2023-09',
@@ -128,14 +157,17 @@ const projectLogs: ProjectEntry[] = [
       'Advanced filtering and search',
       'Wishlist and cart management',
       'Trending products analytics'
-    ]
+    ],
+    screenshots: ['/images/ruche1.png', '/images/ruche2.png'],
   },
   {
-    id: '6',
+    id: '7',
     name: 'VedVaani',
     category: 'Education',
     status: 'development',
-    tech: ['React Native', 'OpenAI', 'Firebase', 'Node.js'],
+    tech: ['Next', 'OpenAI', 'Supabase', 'Node.js'],
+    github: 'https://github.com/nytrixis/vedvaani',
+    live: 'https://vedvaani.vercel.app',
     description: 'AI-powered Hindu scripture Q&A with multilingual support',
     date: '2024-10',
     overview: 'Digital platform for exploring Hindu scriptures with AI-assisted learning.',
@@ -144,8 +176,36 @@ const projectLogs: ProjectEntry[] = [
       'Daily wisdom insights',
       'Multilingual microlearning',
       'Personal wisdom journal'
-    ]
-  }
+    ],
+    screenshots: ['/images/vedvaani1.png', '/images/vedvaani2.png'],
+  },
+  {
+  id: '8',
+  name: 'Koala',
+  category: 'Developer Tools',
+  status: 'development',
+  tech: ['React', 'Socket.io', 'Monaco Editor', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+  description: 'Real-time collaborative code editor with peer coding support and battleground-style coding duels.',
+  github: 'https://github.com/nytrixis/koala', 
+  date: '2024-09',
+  overview: 'Koala is a multiplayer coding platform that enables real-time collaboration for developers. It supports synchronous editing, live battles, room-based coding environments, and chat features, making it ideal for team interviews, contests, and pair programming.',
+  features: [
+    'Live collaborative code editing with multiple users',
+    'Battlegrounds for structured coding duels',
+    'Session-based room management with authentication',
+    'Cursor tracking and code sync across clients',
+    'Integrated chat during sessions',
+    'Persistent room and user data stored in MongoDB'
+  ],
+  challenges: [
+    'Managing real-time socket communication efficiently',
+    'Preventing code conflicts and handling latency',
+    'Designing intuitive UI/UX for multi-user interactions',
+    'Implementing access control and authentication securely'
+  ],
+  screenshots: ['/images/koala1.png', '/images/koala2.png'] 
+}
+
 ]
 
 // Add this useEffect in your ProjectsModal component
