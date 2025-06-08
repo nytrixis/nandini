@@ -1,6 +1,7 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, PanInfo } from 'framer-motion'
+
 import { useState, useEffect } from 'react'
 
 export default function OverviewPanel() {
@@ -18,13 +19,15 @@ export default function OverviewPanel() {
     setTimeout(() => setIsInitialized(true), 2200)
   }, [])
 
-  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: any) => {
-    setPosition(prev => ({
-      x: prev.x + info.offset.x,
-      y: prev.y + info.offset.y
-    }))
-    setIsDragging(false)
-  }
+  // Replace line 21 (handleDragEnd function parameter)
+const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+  setPosition(prev => ({
+    x: prev.x + info.offset.x,
+    y: prev.y + info.offset.y
+  }))
+  setIsDragging(false)
+}
+
 
   const toggleExpanded = () => {
     if (!isDragging) setIsExpanded(!isExpanded)

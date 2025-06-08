@@ -474,7 +474,7 @@ export default function ProjectsModal() {
             <div className="flex items-center gap-2">
               <select
                 value={filterBy}
-                onChange={(e) => setFilterBy(e.target.value as any)}
+                onChange={(e) => setFilterBy(e.target.value as 'all' | 'live' | 'development' | 'archived')}
                 onPointerDown={(e) => e.stopPropagation()}
                 className="glass rounded px-2 py-1 text-xs text-slate-300 bg-transparent border-none outline-none cursor-pointer"
               >

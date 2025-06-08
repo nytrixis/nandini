@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, PanInfo } from 'framer-motion'
 import { useState, useRef, useEffect } from 'react'
 import { useTerminalStore } from '@/store/useTerminalStore'
 import { useModalStore } from '@/store/useModalStore' // Add this import
@@ -64,13 +64,13 @@ export default function Terminal() {
     }
   }
 
-  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: any) => {
-    setPosition(prev => ({
-      x: prev.x + info.offset.x,
-      y: prev.y + info.offset.y
-    }))
-    setIsDragging(false)
-  }
+const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+  setPosition(prev => ({
+    x: prev.x + info.offset.x,
+    y: prev.y + info.offset.y
+  }))
+  setIsDragging(false)
+}
 
   const handleClose = () => {
     if (isDevModeActive) {

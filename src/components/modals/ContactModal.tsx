@@ -9,7 +9,6 @@ import {
   IconBrandTwitter,
   IconBrandInstagram,
   IconMail,
-  IconPhone,
   IconMapPin,
   IconExternalLink,
   IconCopy,
@@ -166,7 +165,7 @@ export default function ContactModal() {
           
           <div className="text-center">
             <h2 className="text-lg orbitron text-slate-200">Contact</h2>
-            <p className="text-xs text-slate-400">Let's connect</p>
+            <p className="text-xs text-slate-400">Let&pos;s connect</p>
           </div>
           
           <div className="w-16"></div>

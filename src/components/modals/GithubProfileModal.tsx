@@ -34,6 +34,12 @@ interface GitHubRepo {
   topics: string[]
 }
 
+interface GitHubContribution {
+  date: string
+  count: number
+  level: number
+}
+
 export default function GitHubProfileModal() {
   const { closeModal } = useModalStore()
   const [position, setPosition] = useState({ x: 0, y: 0 })
@@ -42,7 +48,7 @@ export default function GitHubProfileModal() {
   const [user, setUser] = useState<GitHubUser | null>(null)
   const [repos, setRepos] = useState<GitHubRepo[]>([])
   const [, setReadme] = useState<string | null>(null)
-  const [contributions, setContributions] = useState<any[]>([])
+  const [contributions, setContributions] = useState<GitHubContribution[]>([])
   const [activeTab, setActiveTab] = useState<'overview' | 'repos' | 'contributions'>('overview')
 
   useEffect(() => {
@@ -233,7 +239,7 @@ setContributions(userContributions)
             ].map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() => setActiveTab(tab.id as 'overview' | 'repos' | 'contributions')}
                 onPointerDown={(e) => e.stopPropagation()}
                 className={`px-6 py-3 text-sm orbitron transition-colors cursor-pointer ${
                   activeTab === tab.id

@@ -455,7 +455,7 @@ export default function VaultModal() {
               />
               <select
                 value={filterBy}
-                onChange={(e) => setFilterBy(e.target.value as any)}
+                onChange={(e) => setFilterBy(e.target.value as 'all' | 'research' | 'certificate' | 'credential' | 'achievement' | 'publication')}
                 onPointerDown={(e) => e.stopPropagation()}
                 className="glass rounded px-2 py-1 text-xs text-slate-300 bg-transparent border-none outline-none cursor-pointer"
               >

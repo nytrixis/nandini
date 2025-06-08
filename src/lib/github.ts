@@ -160,7 +160,7 @@ export async function fetchGitHubContributionsThirdParty(username: string): Prom
     const data = await response.json()
     const contributions: GitHubContribution[] = []
     
-    data.contributions.forEach((contribution: any) => {
+    data.contributions.forEach((contribution: { date: string; count: number }) => {
       let level = 0
       if (contribution.count > 0) {
         if (contribution.count >= 10) level = 4
@@ -225,7 +225,7 @@ function generateFallbackContributions(): GitHubContribution[] {
 }
 
 // Get commit activity for more detailed stats
-export async function fetchGitHubCommitActivity(username: string): Promise<any> {
+export async function fetchGitHubCommitActivity(username: string): Promise<unknown[]> {
   try {
     const repos = await fetchGitHubRepos(username)
     const commitPromises = repos.slice(0, 10).map(async (repo) => {
