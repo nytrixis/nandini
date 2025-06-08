@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, PanInfo } from 'framer-motion'
 import { useModalStore } from '@/store/useModalStore'
 

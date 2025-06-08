@@ -40,10 +40,6 @@ interface ContributionWeek {
   contributionDays: ContributionDay[]
 }
 
-interface ContributionCalendar {
-  totalContributions: number
-  weeks: ContributionWeek[]
-}
 
 // REST API calls (no auth needed for public data)
 export async function fetchGitHubProfile(username: string): Promise<GitHubUser> {

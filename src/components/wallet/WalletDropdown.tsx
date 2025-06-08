@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { useModalStore } from '@/store/useModalStore'
 
 export default function WalletDropdown() {
-  const [isConnected, setIsConnected] = useState(true)
+  const [, setIsConnected] = useState(true)
   const { showToast } = useModalStore()
 
   const copyAddress = () => {

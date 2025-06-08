@@ -5,8 +5,7 @@ import { motion, AnimatePresence, PanInfo } from 'framer-motion'
 import { useModalStore } from '@/store/useModalStore'
 import { fetchGitHubProfile, fetchGitHubRepos, fetchGitHubReadme, fetchGitHubContributions } from '@/lib/github'
 import Image from 'next/image'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+
 
 interface GitHubUser {
   login: string
@@ -42,7 +41,7 @@ export default function GitHubProfileModal() {
   const [loading, setLoading] = useState(true)
   const [user, setUser] = useState<GitHubUser | null>(null)
   const [repos, setRepos] = useState<GitHubRepo[]>([])
-  const [readme, setReadme] = useState<string | null>(null)
+  const [, setReadme] = useState<string | null>(null)
   const [contributions, setContributions] = useState<any[]>([])
   const [activeTab, setActiveTab] = useState<'overview' | 'repos' | 'contributions'>('overview')
 
@@ -326,7 +325,7 @@ setContributions(userContributions)
     {/* Header */}
     <div className="text-center space-y-4 pb-6 border-b border-violet-500/20">
       <h1 className="text-3xl orbitron text-violet-400 mb-2">
-        Hi 👋, I'm Nandini Pandey
+        Hi 👋, I&pos;m Nandini Pandey
       </h1>
       <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
         A web aficionado deeply immersed in the world of coding, driven by a passion for 

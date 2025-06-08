@@ -8,6 +8,7 @@ import ProjectsModal from './ProjectsModal'
 import VaultModal from './VaultModal'
 import GitHubProfileModal from './GithubProfileModal'
 import ResumeModal from './ResumeModal'
+import ContactModal from './ContactModal'
 
 export default function ModalManager() {
   const { activeModal } = useModalStore()
@@ -21,7 +22,7 @@ export default function ModalManager() {
       {activeModal === 'hackathons' && <HackathonModal />}
       {activeModal === 'vault' && <VaultModal />}
       {activeModal === 'resume' && <ResumeModal />}
-      {activeModal === 'email' && <div>Contact Modal (Coming Soon)</div>}
+      {activeModal === 'email' && <ContactModal />}
       {activeModal === 'skillmap' && <div>Skillmap Modal (Coming Soon)</div>}
     </>
   )

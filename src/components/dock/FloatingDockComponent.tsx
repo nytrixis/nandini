@@ -8,7 +8,6 @@ import {
   IconMail,
   IconFileText,
   IconMap,
-  IconX,
   IconHistory,
 } from '@tabler/icons-react'
 
@@ -26,9 +25,9 @@ const permanentDockItems = [
     isPermanent: true
   },
   {
-    title: 'contact',
+    title: 'email',
     icon: <IconMail className="h-full w-full text-slate-300" />,
-    onClick: () => {},
+    action: 'modal',
     isPermanent: true
   },
   {
@@ -54,7 +53,7 @@ export default function FloatingDockComponent() {
   onClick: item.action === 'modal' ? () => {
     if (item.title === 'github') openModal('github')
     else if (item.title === 'resume') openModal('resume')
-    else if (item.title === 'contact') openModal('email')
+    else if (item.title === 'email') openModal('email')
     else if (item.title === 'skillmap galaxy') openModal('skillmap')
   } : item.onClick
 }))

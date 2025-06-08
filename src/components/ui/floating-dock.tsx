@@ -144,8 +144,8 @@ const FloatingDockDesktop = ({
   className?: string;
   direction?: "horizontal" | "vertical";
 }) => {
-  let mouseX = useMotionValue(Infinity);
-  let mouseY = useMotionValue(Infinity);
+  const mouseX = useMotionValue(Infinity);
+  const mouseY = useMotionValue(Infinity);
   
   return (
     <motion.div
@@ -201,41 +201,41 @@ function IconContainer({
   isMinimized?: boolean;
   direction?: "horizontal" | "vertical";
 }) {
-  let ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   
-  let distance = useTransform(direction === "horizontal" ? mouseX : mouseY, (val) => {
-    let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, y: 0, width: 0, height: 0 };
+  const distance = useTransform(direction === "horizontal" ? mouseX : mouseY, (val) => {
+    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, y: 0, width: 0, height: 0 };
     return direction === "horizontal" 
       ? val - bounds.x - bounds.width / 2
       : val - bounds.y - bounds.height / 2;
   });
 
-  let widthTransform = useTransform(distance, [-150, 0, 150], [60, 120, 60]);
-  let heightTransform = useTransform(distance, [-150, 0, 150], [60, 120, 60]);
-  let widthTransformIcon = useTransform(distance, [-150, 0, 150], [30, 60, 30]);
-  let heightTransformIcon = useTransform(
+  const widthTransform = useTransform(distance, [-150, 0, 150], [60, 120, 60]);
+  const heightTransform = useTransform(distance, [-150, 0, 150], [60, 120, 60]);
+  const widthTransformIcon = useTransform(distance, [-150, 0, 150], [30, 60, 30]);
+  const heightTransformIcon = useTransform(
     distance,
     [-150, 0, 150],
     [30, 60, 30],
   );
 
-  let width = useSpring(widthTransform, {
+  const width = useSpring(widthTransform, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
   });
-  let height = useSpring(heightTransform, {
+  const height = useSpring(heightTransform, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
   });
 
-  let widthIcon = useSpring(widthTransformIcon, {
+  const widthIcon = useSpring(widthTransformIcon, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
   });
-  let heightIcon = useSpring(heightTransformIcon, {
+  const heightIcon = useSpring(heightTransformIcon, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
