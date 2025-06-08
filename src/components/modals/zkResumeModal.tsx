@@ -238,32 +238,56 @@ export default function ZkResumeModal() {
         </div>
 
         {/* Window Controls */}
-        <div
+          <div
           className="flex items-center justify-between p-4 border-b border-slate-700/50 bg-slate-800/30"
           onPointerDown={(e) => e.stopPropagation()}
         >
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-0.5">
               <button
                 onClick={handleClose}
-                onPointerDown={(e) => e.stopPropagation()}
-                onMouseDown={(e) => e.stopPropagation()}
-                className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-400 transition-colors z-[60] relative cursor-pointer"
+                onPointerDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                onMouseDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                className="p-1.5 hover:bg-slate-700/30 rounded-full transition-colors z-[70] relative cursor-pointer"
                 title="Close"
-              />
+              >
+                <div className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-400 transition-colors" />
+              </button>
               <button
                 onClick={handleMinimize}
-                onPointerDown={(e) => e.stopPropagation()}
-                onMouseDown={(e) => e.stopPropagation()}
-                className="w-3 h-3 bg-yellow-500 rounded-full hover:bg-yellow-400 transition-colors z-[60] relative cursor-pointer"
+                onPointerDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                onMouseDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                className="p-1.5 hover:bg-slate-700/30 rounded-full transition-colors z-[70] relative cursor-pointer"
                 title="Minimize"
-              />
+              >
+                <div className="w-3 h-3 bg-yellow-500 rounded-full hover:bg-yellow-400 transition-colors" />
+              </button>
               <button
-                onPointerDown={(e) => e.stopPropagation()}
-                onMouseDown={(e) => e.stopPropagation()}
-                className="w-3 h-3 bg-green-500 rounded-full hover:bg-green-400 transition-colors z-[60] relative cursor-pointer"
+                onPointerDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                onMouseDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                className="p-1.5 hover:bg-slate-700/30 rounded-full transition-colors z-[70] relative cursor-pointer"
                 title="Maximize"
-              />
+              >
+                <div className="w-3 h-3 bg-green-500 rounded-full hover:bg-green-400 transition-colors" />
+              </button>
             </div>
           </div>
           <div className="orbitron text-slate-300 text-sm">zkresume.eth</div>

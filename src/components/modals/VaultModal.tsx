@@ -417,27 +417,51 @@ export default function VaultModal() {
           onPointerDown={(e) => e.stopPropagation()}
         >
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-0.5">
               <button
                 onClick={handleClose}
-                onPointerDown={(e) => e.stopPropagation()}
-                onMouseDown={(e) => e.stopPropagation()}
-                className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-400 transition-colors z-[60] relative cursor-pointer"
+                onPointerDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                onMouseDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                className="p-1.5 hover:bg-slate-700/30 rounded-full transition-colors z-[70] relative cursor-pointer"
                 title="Close"
-              />
+              >
+                <div className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-400 transition-colors" />
+              </button>
               <button
                 onClick={handleMinimize}
-                onPointerDown={(e) => e.stopPropagation()}
-                onMouseDown={(e) => e.stopPropagation()}
-                className="w-3 h-3 bg-yellow-500 rounded-full hover:bg-yellow-400 transition-colors z-[60] relative cursor-pointer"
+                onPointerDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                onMouseDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                className="p-1.5 hover:bg-slate-700/30 rounded-full transition-colors z-[70] relative cursor-pointer"
                 title="Minimize"
-              />
+              >
+                <div className="w-3 h-3 bg-yellow-500 rounded-full hover:bg-yellow-400 transition-colors" />
+              </button>
               <button
-                onPointerDown={(e) => e.stopPropagation()}
-                onMouseDown={(e) => e.stopPropagation()}
-                className="w-3 h-3 bg-green-500 rounded-full hover:bg-green-400 transition-colors z-[60] relative cursor-pointer"
+                onPointerDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                onMouseDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                className="p-1.5 hover:bg-slate-700/30 rounded-full transition-colors z-[70] relative cursor-pointer"
                 title="Maximize"
-              />
+              >
+                <div className="w-3 h-3 bg-green-500 rounded-full hover:bg-green-400 transition-colors" />
+              </button>
             </div>
           </div>
           <div className="orbitron text-slate-300 text-sm">
@@ -468,8 +492,14 @@ export default function VaultModal() {
               </select>
               <button
                 onClick={() => setSortBy(sortBy === 'date' ? 'name' : sortBy === 'name' ? 'category' : 'date')}
-                onPointerDown={(e) => e.stopPropagation()}
-                onMouseDown={(e) => e.stopPropagation()}
+                onPointerDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+                onMouseDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
                 className="glass rounded px-3 py-1 text-xs text-slate-300 hover:bg-slate-700/30 transition-colors orbitron cursor-pointer"
               >
                 sort: {sortBy}
@@ -477,6 +507,7 @@ export default function VaultModal() {
             </div>
           )}
         </div>
+
 
         {/* Content */}
         {selectedEntry ? (

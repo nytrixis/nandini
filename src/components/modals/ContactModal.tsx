@@ -137,39 +137,68 @@ export default function ContactModal() {
         }`}
       >
         {/* Header */}
-        <div 
-          className="flex items-center justify-between p-6 border-b border-slate-700/20"
-          onPointerDown={(e) => e.stopPropagation()}
-        >
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2">
-              <button
-                onClick={handleClose}
-                onPointerDown={(e) => e.stopPropagation()}
-                className="w-3 h-3 bg-red-500/80 rounded-full hover:bg-red-500 transition-colors cursor-pointer"
-                title="Close"
-              />
-              <button
-                onClick={handleMinimize}
-                onPointerDown={(e) => e.stopPropagation()}
-                className="w-3 h-3 bg-yellow-500/80 rounded-full hover:bg-yellow-500 transition-colors cursor-pointer"
-                title="Minimize"
-              />
-              <button
-                onPointerDown={(e) => e.stopPropagation()}
-                className="w-3 h-3 bg-green-500/80 rounded-full hover:bg-green-500 transition-colors cursor-pointer"
-                title="Maximize"
-              />
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <h2 className="text-lg orbitron text-slate-200">Contact</h2>
-            <p className="text-xs text-slate-400">Let&apos;s connect</p>
-          </div>
-          
-          <div className="w-16"></div>
-        </div>
+        
+<div 
+  className="flex items-center justify-between p-6 border-b border-slate-700/20"
+  onPointerDown={(e) => e.stopPropagation()}
+>
+  <div className="flex items-center gap-3">
+    <div className="flex items-center gap-0.5">
+      <button
+        onClick={handleClose}
+        onPointerDown={(e) => {
+          e.preventDefault()
+          e.stopPropagation()
+        }}
+        onMouseDown={(e) => {
+          e.preventDefault()
+          e.stopPropagation()
+        }}
+        className="p-1.5 hover:bg-slate-700/30 rounded-full transition-colors z-[70] relative cursor-pointer"
+        title="Close"
+      >
+        <div className="w-3 h-3 bg-red-500/80 rounded-full hover:bg-red-500 transition-colors" />
+      </button>
+      <button
+        onClick={handleMinimize}
+        onPointerDown={(e) => {
+          e.preventDefault()
+          e.stopPropagation()
+        }}
+        onMouseDown={(e) => {
+          e.preventDefault()
+          e.stopPropagation()
+        }}
+        className="p-1.5 hover:bg-slate-700/30 rounded-full transition-colors z-[70] relative cursor-pointer"
+        title="Minimize"
+      >
+        <div className="w-3 h-3 bg-yellow-500/80 rounded-full hover:bg-yellow-500 transition-colors" />
+      </button>
+      <button
+        onPointerDown={(e) => {
+          e.preventDefault()
+          e.stopPropagation()
+        }}
+        onMouseDown={(e) => {
+          e.preventDefault()
+          e.stopPropagation()
+        }}
+        className="p-1.5 hover:bg-slate-700/30 rounded-full transition-colors z-[70] relative cursor-pointer"
+        title="Maximize"
+      >
+        <div className="w-3 h-3 bg-green-500/80 rounded-full hover:bg-green-500 transition-colors" />
+      </button>
+    </div>
+  </div>
+  
+  <div className="text-center">
+    <h2 className="text-lg orbitron text-slate-200">Contact</h2>
+    <p className="text-xs text-slate-400">Let&apos;s connect</p>
+  </div>
+  
+  <div className="w-16"></div>
+</div>
+
 
         {/* Content */}
         <div 
