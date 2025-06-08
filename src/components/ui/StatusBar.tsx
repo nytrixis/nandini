@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { toggleGlobalSound, isGlobalSoundEnabled } from '@/lib/globalClickHandler'
 
 export default function StatusBar() {
   const [currentTime, setCurrentTime] = useState('')
+  const [soundEnabled, setSoundEnabled] = useState(true)
 
   useEffect(() => {
     const updateTime = () => {
@@ -23,9 +25,20 @@ export default function StatusBar() {
     
     // Update every second
     const interval = setInterval(updateTime, 1000)
+
     
     return () => clearInterval(interval)
   }, [])
+
+  useEffect(() => {
+    setSoundEnabled(isGlobalSoundEnabled())
+  }, [])
+
+  const handleSoundToggle = () => {
+    const newState = toggleGlobalSound()
+    setSoundEnabled(newState)
+  }
+
 
   return (
     <motion.div
@@ -49,6 +62,16 @@ export default function StatusBar() {
         <div className="text-slate-400 text-xs orbitron border-l border-slate-600 pl-3">
           ENG
         </div>
+
+        <button
+          onClick={handleSoundToggle}
+          className="flex items-center gap-2 text-slate-400 hover:text-slate-300 transition-colors cursor-pointer"
+          title={soundEnabled ? 'Disable sound' : 'Enable sound'}
+        >
+          <span className="text-sm">
+            {soundEnabled ? '🔊' : '🔇'}
+          </span>
+        </button>
       </div>
     </motion.div>
   )
