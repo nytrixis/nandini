@@ -331,7 +331,7 @@ setContributions(userContributions)
     {/* Header */}
     <div className="text-center space-y-4 pb-6 border-b border-violet-500/20">
       <h1 className="text-3xl orbitron text-violet-400 mb-2">
-        Hi 👋, I&pos;m Nandini Pandey
+        Hi 👋, I&apos;m Nandini Pandey
       </h1>
       <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
         A web aficionado deeply immersed in the world of coding, driven by a passion for 

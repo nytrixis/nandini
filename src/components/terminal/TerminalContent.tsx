@@ -59,7 +59,7 @@ export default function TerminalContent({ showWelcome = true }: TerminalContentP
               welcome to nytrixis.dos v1.0.0
             </div>
             <div className="text-slate-400 mb-4 text-xs">
-              type &pos;help&pos; for available commands
+              type &apos;help&apos; for available commands
             </div>
           </>
         )}
