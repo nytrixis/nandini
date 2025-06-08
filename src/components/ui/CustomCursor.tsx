@@ -48,17 +48,18 @@ export default function CustomCursor() {
   }, [])
 
   return (
-    <div
-      id="custom-cursor"
-      className={`${isHovering ? 'cursor-hover' : ''} ${isClicking ? 'cursor-click' : ''}`}
-      style={{
-        left: position.x,
-        top: position.y,
-      }}
-    >
-      <div className="cursor-line"></div>
-      <div className="cursor-line"></div>
-      <div className="cursor-dot"></div>
-    </div>
-  )
+  <div
+    id="custom-cursor"
+    className={`${isHovering ? 'cursor-hover' : ''} ${isClicking ? 'cursor-click' : ''}`}
+    style={{
+      left: position.x,
+      top: position.y,
+    }}
+  >
+    <div className="cursor-line"></div>
+    <div className="cursor-line"></div>
+    <div className="cursor-dot"></div>
+    <div className="cursor-ring"></div>
+  </div>
+)
 }

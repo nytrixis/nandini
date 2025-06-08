@@ -74,7 +74,6 @@ body {
   background: rgba(139, 92, 246, 0.7);
 }
 
-/* Custom Cursor Styles */
 * {
   cursor: none !important;
 }
@@ -108,6 +107,7 @@ button, a, [role="button"], input, textarea, select, [onclick], .cursor-pointer 
     0 0 16px #a855f7,
     0 0 24px #a855f7;
   transform-origin: left center;
+  transition: all 0.3s ease;
 }
 
 /* Left line of triangle - angled down-right */
@@ -138,22 +138,83 @@ button, a, [role="button"], input, textarea, select, [onclick], .cursor-pointer 
     0 0 12px #a855f7,
     0 0 24px #a855f7,
     0 0 36px #a855f7;
+  transition: all 0.3s ease;
 }
 
-/* Hover state - show dot at tip */
-.cursor-hover .cursor-dot {
+/* Hover ring indicator */
+.cursor-ring {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #00d4ff;
+  border-radius: 50%;
+  top: -10px;
+  left: -8px;
+  opacity: 0;
+  transform: scale(0.5);
+  box-shadow: 
+    0 0 20px rgba(0, 212, 255, 0.4),
+    inset 0 0 20px rgba(0, 212, 255, 0.1);
+  transition: all 0.3s ease;
+  animation: none;
+}
+
+/* Hover state - show pulsing ring around the pointer */
+.cursor-hover .cursor-ring {
   opacity: 1;
   transform: scale(1);
+  animation: pulse-ring 1.5s ease-in-out infinite;
 }
 
+.cursor-hover .cursor-line {
+  background: #00d4ff;
+  box-shadow: 
+    0 0 8px #00d4ff,
+    0 0 16px #00d4ff,
+    0 0 24px #00d4ff;
+}
+
+/* Click state - show dot and change colors */
 .cursor-click .cursor-dot {
   opacity: 1;
-  transform: scale(1.5);
-  background: #c084fc;
+  transform: scale(1.2);
+  background: #00ff88;
   box-shadow: 
-    0 0 16px #c084fc,
-    0 0 32px #c084fc,
-    0 0 48px #c084fc;
+    0 0 16px #00ff88,
+    0 0 32px #00ff88,
+    0 0 48px #00ff88;
+}
+
+.cursor-click .cursor-line {
+  background: #00ff88;
+  box-shadow: 
+    0 0 8px #00ff88,
+    0 0 16px #00ff88,
+    0 0 24px #00ff88;
+}
+
+.cursor-click .cursor-ring {
+  border-color: #00ff88;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 136, 0.6),
+    inset 0 0 20px rgba(0, 255, 136, 0.2);
+  transform: scale(0.8);
+}
+
+/* Pulse animation for the ring */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Add this to your existing globals.css file */
