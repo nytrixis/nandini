@@ -84,7 +84,7 @@ export default function Home() {
         <FloatingDockComponent />
       </div>
 
-      <div className="z-[300]">
+      <div className="z-[600]">
         <StatusBar />
       </div>
       

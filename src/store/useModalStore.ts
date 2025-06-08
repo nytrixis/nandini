@@ -18,6 +18,7 @@ interface ModalStore {
   selectedProject: string | null
   setSelectedProject: (projectId: string | null) => void
   openModal: (modalId: string) => void
+  openProjectModal: (projectId?: string) => void 
   closeModal: (modalId: string) => void
   minimizeTab: (modalId: string, title: string) => void
   restoreTab: (tabId: string) => void
@@ -43,6 +44,23 @@ export const useModalStore = create<ModalStore>((set, get) => ({
       minimizedTabs: minimizedTabs.filter(tab => tab.id !== modalId)
     })
   },
+
+  openProjectModal: (projectId?: string) => {
+  const { activeModal } = get()
+  if (activeModal === 'projects') {
+    set({ selectedProject: projectId || null })
+  } else {
+    set({ 
+      activeModal: 'projects',
+      selectedProject: projectId || null 
+    })
+    const { minimizedTabs } = get()
+    set({
+      minimizedTabs: minimizedTabs.filter(tab => tab.id === 'projects')
+    })
+  }
+},
+
 
   closeModal: (modalId: string) => {
     const { activeModal } = get()

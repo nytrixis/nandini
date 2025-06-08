@@ -32,7 +32,7 @@ export default function StatusBar() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.5, duration: 0.8 }}
-      className="fixed bottom-0 right-0 p-[10px] z-40"
+      className="fixed bottom-0 right-0 p-[10px] z-[600]"
     >
       <div className="glass rounded-lg px-3 py-2 flex items-center gap-3">
         {/* Time with Online Status */}

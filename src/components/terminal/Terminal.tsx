@@ -211,7 +211,7 @@ const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: Pan
               {/* Terminal Content */}
               <div
                 ref={historyRef}
-                className="flex-1 p-4 overflow-y-auto text-sm leading-relaxed cursor-text scrollbar-thin scrollbar-track-slate-800 scrollbar-thumb-slate-600"
+                className="flex-1 p-4 overflow-y-auto text-sm leading-relaxed cursor-text scrollbar-thin scrollbar-track-slate-800 scrollbar-thumb-slate-600 max-h-[240px]"
                 onClick={handleFocus}
               >
                 {/* Welcome Message */}
@@ -219,28 +219,31 @@ const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: Pan
                   gm gm! welcome to nytrixis.dos v1.0.0
                 </div>
                 <div className="text-slate-400 mb-4 text-xs">
-                  type &apos;help&apos; for available commands
+                  type 'help' for available commands
                 </div>
 
                 {/* Command History */}
-                {history.map((entry, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className={`mb-1 ${
-                      entry.type === 'input'
-                        ? 'text-green-400'
-                        : entry.type === 'error'
-                        ? 'text-red-400'
-                        : 'text-slate-300'
-                    }`}
-                  >
-                    {entry.content}
-                  </motion.div>
-                ))}
+                <div className="space-y-1">
+                  {history.map((entry, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className={`whitespace-pre-wrap break-words ${
+                        entry.type === 'input'
+                          ? 'text-green-400'
+                          : entry.type === 'error'
+                          ? 'text-red-400'
+                          : 'text-slate-300'
+                      }`}
+                    >
+                      {entry.content}
+                    </motion.div>
+                  ))}
+                </div>
               </div>
+
 
               {/* Input Line */}
               <form onSubmit={handleSubmit} className="px-4 pb-4">

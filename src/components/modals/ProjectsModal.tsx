@@ -153,7 +153,7 @@ const projectLogs: ProjectEntry[] = [
 
 
 export default function ProjectsModal() {
-  const { closeModal, minimizeTab } = useModalStore()
+  const { closeModal, minimizeTab, selectedProject: selectedProjectId } = useModalStore()
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isDragging, setIsDragging] = useState(false)
   const [selectedProject, setSelectedProject] = useState<ProjectEntry | null>(null)
@@ -161,16 +161,15 @@ export default function ProjectsModal() {
   const [sortBy, setSortBy] = useState<'date' | 'name' | 'category'>('date')
 
   useEffect(() => {
-  const { selectedProject: selectedProjectId } = useModalStore.getState()
   if (selectedProjectId) {
     const project = projectLogs.find(p => p.id === selectedProjectId)
     if (project) {
       setSelectedProject(project)
-      // Clear the selected project from store after using it
-      useModalStore.getState().setSelectedProject('')
     }
+    // Clear the selected project from store after using it
+    useModalStore.getState().setSelectedProject(null)
   }
-}, [])
+}, [selectedProjectId])
 
   const filteredProjects = projectLogs.filter(project => 
     filterBy === 'all' || project.status === filterBy
