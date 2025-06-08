@@ -271,7 +271,7 @@ function IconContainer({
               scale: 0.9
             }}
             className={cn(
-              "absolute w-fit rounded-lg glass px-4 py-3 text-base whitespace-pre text-slate-300 orbitron",
+              "tooltip-top absolute w-fit rounded-lg glass px-4 py-3 text-base whitespace-pre text-slate-300 orbitron",
               direction === "vertical" 
                 ? "left-full ml-4 top-1/2 -translate-y-1/2"
                 : "-top-10 left-1/2 -translate-x-1/2"

@@ -7,7 +7,6 @@ import {
   IconBrandLinkedin,
   IconMail,
   IconFileText,
-  IconMap,
   IconHistory,
 } from '@tabler/icons-react'
 
@@ -36,12 +35,6 @@ const permanentDockItems = [
     href: 'https://linkedin.com/in/nytrixis',
     isPermanent: true
   },
-  {
-    title: 'skillmap galaxy',
-    icon: <IconMap className="h-full w-full text-slate-300" />,
-    onClick: () => {},
-    isPermanent: true
-  }
 ]
 
 export default function FloatingDockComponent() {
@@ -49,15 +42,13 @@ export default function FloatingDockComponent() {
 
   // Add onClick handlers for permanent modal items
   const permanentItemsWithHandlers = permanentDockItems.map(item => ({
-  ...item,
-  onClick: item.action === 'modal' ? () => {
-    if (item.title === 'github') openModal('github')
-    else if (item.title === 'resume') openModal('resume')
-    else if (item.title === 'email') openModal('email')
-    else if (item.title === 'skillmap galaxy') openModal('skillmap')
-  } : item.onClick
-}))
-
+    ...item,
+    onClick: item.action === 'modal' ? () => {
+      if (item.title === 'github') openModal('github')
+      else if (item.title === 'resume') openModal('resume')
+      else if (item.title === 'email') openModal('email')
+    } : item.href ? () => window.open(item.href, '_blank') : undefined
+  }))
   // Create minimized tab items
   const minimizedTabItems = minimizedTabs.map(tab => ({
     title: tab.title,

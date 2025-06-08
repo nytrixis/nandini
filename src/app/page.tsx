@@ -25,11 +25,10 @@ export default function Home() {
 
   const handleNavigate = async (url: string) => {
     try {
-      console.log('handleNavigate called with:', url) // Debug log
-      // Navigate to the browse page with the URL parameter
+      console.log('handleNavigate called with:', url) 
       const encodedUrl = encodeURIComponent(url)
       const browseUrl = `/browse?url=${encodedUrl}`
-      console.log('Navigating to:', browseUrl) // Debug log
+      console.log('Navigating to:', browseUrl) 
       
       router.push(browseUrl)
     } catch (error) {
@@ -72,30 +71,44 @@ export default function Home() {
       </div>
 
       {/* Components */}
-      <div className="absolute top-10 right-6 z-50">
+      <div className="absolute top-10 right-6 z-[200]">
         <WalletDropdown />
       </div>
 
-      <div className="absolute top-10 left-0 right-0 z-30">
+      <div className="absolute top-10 left-0 right-0 z-[30]">
         <Desktop />
       </div>
 
       {/* Floating Dock - positioned on left side */}
-      <div className="absolute left-6 top-1/2 -translate-y-1/2 z-40">
+      <div className="absolute left-6 top-1/2 -translate-y-1/2 z-[300]">
         <FloatingDockComponent />
       </div>
 
-      <StatusBar />
-      <Terminal />
-      <OverviewPanel />
-      <ModalManager />
+      <div className="z-[300]">
+        <StatusBar />
+      </div>
+      
+      <div className="z-[100]">
+        <Terminal />
+      </div>
+      
+      <div className="z-[150]">
+        <OverviewPanel />
+      </div>
+      
+      <div className="z-[150]">
+        <ModalManager />
+      </div>
 
-      {/* Search Bar - positioned at bottom center with 10px gap */}
-      <SearchBar onNavigate={handleNavigate} />
+      {/* Search Bar */}
+      <div className="z-[300]">
+        <SearchBar onNavigate={handleNavigate} />
+      </div>
+
 
       <AnimatePresence>
         {toast && (
-          <div className="absolute top-20 right-6 z-50">
+          <div className="absolute top-20 right-6 z-[250]">
             <Toast message={toast.message} type={toast.type} />
           </div>
         )}
@@ -106,7 +119,7 @@ export default function Home() {
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute inset-0 bg-slate-950 flex items-center justify-center z-50 pointer-events-none"
+        className="absolute inset-0 bg-slate-950 flex items-center justify-center z-[500] pointer-events-none"
       >
         <div className="text-center">
           <motion.div

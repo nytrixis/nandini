@@ -53,7 +53,7 @@ export default function DockIcon({ icon, label, onClick }: DockIconProps) {
           scale: isHovered ? 1 : 0.9
         }}
         transition={{ duration: 0.2 }}
-        className="absolute left-full ml-4 top-1/2 -translate-y-1/2 z-50 pointer-events-none"
+        className="tooltip-top absolute left-full ml-4 top-1/2 -translate-y-1/2 pointer-events-none"
       >
         <div className="glass rounded-lg px-4 py-3 orbitron text-base text-slate-300 whitespace-nowrap">
           {label}

@@ -92,7 +92,7 @@ const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: Pan
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
-        className="fixed glass terminal-glow rounded-lg overflow-hidden w-96 h-80 z-40"
+        className="fixed glass terminal-glow rounded-lg overflow-hidden w-96 h-80 z-[100]"
         style={{
           left: '50%',
           top: '50%',
@@ -216,7 +216,7 @@ const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: Pan
               >
                 {/* Welcome Message */}
                 <div className="text-violet-400 mb-2">
-                  welcome to nytrixis.dos v1.0.0
+                  gm gm! welcome to nytrixis.dos v1.0.0
                 </div>
                 <div className="text-slate-400 mb-4 text-xs">
                   type &apos;help&apos; for available commands

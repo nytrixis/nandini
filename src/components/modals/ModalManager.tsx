@@ -23,7 +23,6 @@ export default function ModalManager() {
       {activeModal === 'vault' && <VaultModal />}
       {activeModal === 'resume' && <ResumeModal />}
       {activeModal === 'email' && <ContactModal />}
-      {activeModal === 'skillmap' && <div>Skillmap Modal (Coming Soon)</div>}
     </>
   )
 }

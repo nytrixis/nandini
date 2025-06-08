@@ -11,7 +11,7 @@ export default function OverviewPanel() {
   const [isInitialized, setIsInitialized] = useState(false)
 
   const getDefaultPosition = () => {
-    return { x: -550, y: 150 }
+    return { x: -550, y: 500 }
   }
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function OverviewPanel() {
     setTimeout(() => setIsInitialized(true), 2200)
   }, [])
 
-  // Replace line 21 (handleDragEnd function parameter)
+
 const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
   setPosition(prev => ({
     x: prev.x + info.offset.x,
@@ -53,7 +53,7 @@ const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: Pan
         x: position.x,
         y: position.y,
       }}
-      className="fixed glass terminal-glow rounded-lg overflow-hidden z-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] cursor-pointer"
+      className="fixed glass terminal-glow rounded-lg overflow-hidden z-[110] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] cursor-pointer"
       onClick={toggleExpanded}
     >
       {/* Header */}
