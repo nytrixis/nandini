@@ -52,8 +52,8 @@ export default function Home() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/images/background.png')`,
-          filter: 'brightness(0.3) contrast(1.2)'
+          backgroundImage: `url('/images/background.gif')`,
+          filter: 'brightness(0.5) contrast(1.2)'
         }}
       />
       
@@ -69,7 +69,6 @@ export default function Home() {
              }}
         />
       </div>
-
       {/* Components */}
       <div className="absolute top-10 right-6 z-[200]">
         <WalletDropdown />
